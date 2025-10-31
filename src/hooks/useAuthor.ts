@@ -14,11 +14,12 @@ export function useAuthor(pubkey: string | undefined) {
 
       const [event] = await nostr.query(
         [{ kinds: [0], authors: [pubkey!], limit: 1 }],
-        { signal: AbortSignal.any([signal, AbortSignal.timeout(1500)]) },
+        { signal: AbortSignal.any([signal, AbortSignal.timeout(3000)]) },
       );
 
       if (!event) {
-        throw new Error('No event found');
+        // Return empty instead of throwing - user might not have a profile yet
+        return {};
       }
 
       try {
@@ -28,7 +29,8 @@ export function useAuthor(pubkey: string | undefined) {
         return { event };
       }
     },
+    enabled: !!pubkey,
     staleTime: 5 * 60 * 1000, // Keep cached data fresh for 5 minutes
-    retry: 3,
+    retry: 1, // Only retry once
   });
 }

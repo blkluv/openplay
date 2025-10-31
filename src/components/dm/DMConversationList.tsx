@@ -229,11 +229,11 @@ export const DMConversationList = ({
       </div>
       
       {/* Content area - show skeleton during initial load, otherwise show conversations */}
-      <div className="flex-1 min-h-0 mt-2 overflow-hidden">
+      <div className="flex flex-col flex-1 min-h-0 mt-2">
         {(isLoading || isInitialLoad) ? (
           <ConversationListSkeleton />
         ) : conversations.length === 0 ? (
-          <div className="flex items-center justify-center h-full text-center text-muted-foreground px-4">
+          <div className="flex items-center justify-center flex-1 text-center text-muted-foreground px-4">
             <div>
               <p className="text-sm">No conversations yet</p>
               <p className="text-xs mt-1">Start a new conversation to get started</p>
@@ -244,8 +244,8 @@ export const DMConversationList = ({
             <p className="text-sm">No {activeTab} conversations</p>
           </div>
         ) : (
-          <ScrollArea className="h-full block">
-            <div className="block w-full px-2 py-2 space-y-1">
+          <ScrollArea className="flex-1">
+            <div className="px-2 py-2 space-y-1">
               {currentConversations.map((conversation) => (
                 <ConversationItem
                   key={conversation.pubkey}

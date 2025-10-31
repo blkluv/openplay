@@ -1081,20 +1081,15 @@ export function DMProvider({ children, config }: DMProviderProps) {
       const messageEvent = JSON.parse(messageContent) as NostrEvent;
 
       // Accept both kind 14 (text) and kind 15 (files/attachments)
+      // Skip other event kinds (like reactions, etc.) silently - they're not DMs
       if (messageEvent.kind !== 14 && messageEvent.kind !== 15) {
-        console.log(`[DM] ⚠️ NIP-17 MESSAGE WITH UNSUPPORTED INNER EVENT KIND:`, {
-          giftWrapId: event.id,
-          innerKind: messageEvent.kind,
-          expectedKinds: [14, 15],
-          sealPubkey: sealEvent.pubkey,
-          messageEvent: messageEvent,
-        });
+        console.log(`[DM] ⏭️  Skipping NIP-17 gift wrap with non-DM inner event (kind ${messageEvent.kind})`);
         return {
           processedMessage: {
             ...event,
             content: '',
             decryptedContent: '',
-            error: `Invalid message format - expected kind 14 or 15, got ${messageEvent.kind}`,
+            skip: true, // Mark as skipped, not an error
           },
           conversationPartner: event.pubkey,
           sealEvent, // Return the seal
@@ -1158,6 +1153,11 @@ export function DMProvider({ children, config }: DMProviderProps) {
 
     try {
       const { processedMessage, conversationPartner, sealEvent } = await processNIP17GiftWrap(event);
+
+      // Skip non-DM gift wraps (reactions, etc.) silently
+      if ((processedMessage as any).skip) {
+        return;
+      }
 
       // Check if decryption failed
       if (processedMessage.error) {

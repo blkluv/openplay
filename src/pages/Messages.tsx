@@ -1,6 +1,6 @@
 import { useSeoMeta } from '@unhead/react';
 import { DMMessagingInterface } from '@/components/dm/DMMessagingInterface';
-import { RelaySelector } from '@/components/RelaySelector';
+import { VideoLayout } from '@/components/video/VideoLayout';
 
 const Messages = () => {
   useSeoMeta({
@@ -9,17 +9,11 @@ const Messages = () => {
   });
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto p-4 h-screen flex flex-col">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-4">
-          <h1 className="text-2xl font-semibold">Messages</h1>
-          <RelaySelector />
-        </div>
-
-        <DMMessagingInterface className="flex-1" />
+    <VideoLayout>
+      <div className="container mx-auto px-3 sm:px-4 pt-4 pb-2 sm:pt-5 sm:pb-3 h-[calc(100vh-3.5rem)] flex flex-col overflow-hidden">
+        <DMMessagingInterface className="flex-1 min-h-0" />
       </div>
-    </div>
+    </VideoLayout>
   );
 };
 

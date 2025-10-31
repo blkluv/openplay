@@ -1,7 +1,8 @@
 // NOTE: This file is stable and usually should not be modified.
 // It is important that all functionality in this file is preserved, and should only be modified if explicitly requested.
 
-import { ChevronDown, LogOut, UserIcon, UserPlus, Wallet } from 'lucide-react';
+import { ChevronDown, LogOut, UserIcon, UserPlus, Wallet, Moon, Sun, Settings } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,6 +15,7 @@ import { RelaySelector } from '@/components/RelaySelector';
 import { WalletModal } from '@/components/WalletModal';
 import { useLoggedInAccounts, type Account } from '@/hooks/useLoggedInAccounts';
 import { genUserName } from '@/lib/genUserName';
+import { useAppContext } from '@/hooks/useAppContext';
 
 interface AccountSwitcherProps {
   onAddAccountClick: () => void;
@@ -21,12 +23,18 @@ interface AccountSwitcherProps {
 
 export function AccountSwitcher({ onAddAccountClick }: AccountSwitcherProps) {
   const { currentUser, otherUsers, setLogin, removeLogin } = useLoggedInAccounts();
+  const { config, updateConfig } = useAppContext();
 
   if (!currentUser) return null;
 
   const getDisplayName = (account: Account): string => {
     return account.metadata.name ?? genUserName(account.pubkey);
   }
+
+  const toggleTheme = () => {
+    const newTheme = config.theme === 'dark' ? 'light' : 'dark';
+    updateConfig(() => ({ theme: newTheme }));
+  };
 
   return (
     <DropdownMenu modal={false}>
@@ -64,6 +72,29 @@ export function AccountSwitcher({ onAddAccountClick }: AccountSwitcherProps) {
           </DropdownMenuItem>
         ))}
         <DropdownMenuSeparator />
+        <DropdownMenuItem
+          onClick={toggleTheme}
+          className='flex items-center gap-2 cursor-pointer p-2 rounded-md'
+        >
+          {config.theme === 'dark' ? (
+            <>
+              <Sun className='w-4 h-4' />
+              <span>Light Mode</span>
+            </>
+          ) : (
+            <>
+              <Moon className='w-4 h-4' />
+              <span>Dark Mode</span>
+            </>
+          )}
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem asChild className='flex items-center gap-2 cursor-pointer p-2 rounded-md'>
+          <Link to='/settings'>
+            <Settings className='w-4 h-4' />
+            <span>Settings</span>
+          </Link>
+        </DropdownMenuItem>
         <WalletModal>
           <DropdownMenuItem
             className='flex items-center gap-2 cursor-pointer p-2 rounded-md'
