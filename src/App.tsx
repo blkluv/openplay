@@ -32,15 +32,16 @@ const queryClient = new QueryClient({
   },
 });
 
+// Changed default relay from 'wss://relay.nostr.band' to a working relay
 const defaultConfig: AppConfig = {
   theme: "light",
-  relayUrl: "wss://relay.nostr.band",
+  relayUrl: "wss://relay.damus.io", // was 'wss://relay.nostr.band'
 };
 
 const presetRelays = [
+  { url: 'wss://relay.damus.io', name: 'Damus' },
   { url: 'wss://relay.ditto.pub', name: 'Ditto' },
   { url: 'wss://relay.nostr.band', name: 'Nostr.Band' },
-  { url: 'wss://relay.damus.io', name: 'Damus' },
   { url: 'wss://relay.primal.net', name: 'Primal' },
 ];
 
