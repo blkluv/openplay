@@ -13,6 +13,9 @@ import { cn } from '@/lib/utils';
 const categories = [
   'All',
   'Baddie',
+  'Real Estate',
+  'Reviews',
+  'Jobs',
   'Food',
   'Tech',
   'Crystals',
