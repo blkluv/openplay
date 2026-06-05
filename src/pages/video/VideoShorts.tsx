@@ -63,9 +63,9 @@ export default function VideoShorts() {
 
   useSeoMeta({
     title: authorPubkey && channelAuthor?.metadata?.name
-      ? `${channelAuthor.metadata.name}'s Shorts - OpenPlay`
-      : 'Shorts - OpenPlay',
-    description: 'Watch short-form vertical videos on the decentralized Nostr network',
+      ? `${channelAuthor.metadata.name}'s Shorts - SHORTZ`
+      : 'Shorts - SHORTZ',
+    description: 'Watch short-form vertical videos on the Web5 network',
   });
 
   // Fetch shorts (filtered by author if provided)
@@ -212,7 +212,7 @@ export default function VideoShorts() {
       if (navigator.share) {
         await navigator.share({
           title: video.title,
-          text: video.content || `Watch ${video.title} on OpenPlay`,
+          text: video.content || `Watch ${video.title} on SHORTZ`,
           url: shareUrl,
         });
       } else {
@@ -255,7 +255,7 @@ export default function VideoShorts() {
           <div className="text-6xl">📱</div>
           <h2 className="text-xl font-semibold text-foreground">No Shorts Yet</h2>
           <p className="text-muted-foreground">
-            Be the first to share a short vertical video on OpenPlay!
+            Be the first to share a short vertical video on SHORTZ!
           </p>
         </div>
       </div>

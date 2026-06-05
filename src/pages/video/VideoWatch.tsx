@@ -48,7 +48,7 @@ export default function VideoWatch() {
     const shareUrl = window.location.href;
     const shareData = {
       title: video.title,
-      text: video.content || `Watch ${video.title} on OpenPlay`,
+      text: video.content || `Watch ${video.title} on SHORTZ`,
       url: shareUrl,
     };
 
@@ -84,7 +84,7 @@ export default function VideoWatch() {
 
   useSeoMeta({
     title: video?.title || 'Watch Video',
-    description: video?.content || 'Watch video on OpenPlay',
+    description: video?.content || 'Watch video on SHORTZ',
   });
 
   if (isLoading) {

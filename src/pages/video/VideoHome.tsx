@@ -12,23 +12,24 @@ import { cn } from '@/lib/utils';
 
 const categories = [
   'All',
-  'Bitcoin',
-  'Nostr',
-  'Technology',
+  'Baddie',
+  'Food',
+  'Tech',
+  'Crystals',
   'Music',
   'Gaming',
   'Education',
   'News',
   'Comedy',
-  'Sports',
+  'Spiritual',
 ];
 
 export default function VideoHome() {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   useSeoMeta({
-    title: 'OpenPlay - Decentralized Video Platform',
-    description: 'Discover and watch videos on the decentralized Nostr network',
+    title: 'SHORTZ - Decentralized Video Platform',
+    description: 'Discover and watch videos on the Web5 network',
   });
 
   // Fetch horizontal videos
@@ -199,7 +200,7 @@ export default function VideoHome() {
                 <h2 className="text-xl font-semibold">No Videos Yet</h2>
                 <p className="text-muted-foreground">
                   {selectedCategory === 'All'
-                    ? 'Be the first to share a video on OpenPlay! Upload your content and help build the decentralized video network.'
+                    ? 'Be the first to share a video on SHORTZ! Upload your content and help build the Web5 network.'
                     : `No videos found for ${selectedCategory}. Try selecting a different category.`}
                 </p>
               </div>

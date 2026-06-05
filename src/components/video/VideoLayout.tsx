@@ -75,7 +75,7 @@ export function VideoLayout({ children, showSidebar = true }: VideoLayoutProps) 
 
           <Link to="/" className="flex items-center gap-1.5 font-semibold flex-shrink-0">
             <Video className="h-5 w-5 md:h-6 md:w-6" />
-            <span className="hidden sm:inline-block text-sm md:text-base">OpenPlay</span>
+            <span className="hidden sm:inline-block text-sm md:text-base">SHORTZ</span>
           </Link>
 
           <form onSubmit={handleSearch} className="flex-1 max-w-xs sm:max-w-md md:max-w-2xl mx-auto">
@@ -209,7 +209,7 @@ export function VideoLayout({ children, showSidebar = true }: VideoLayoutProps) 
             <SheetHeader className="px-3 py-3 border-b">
               <SheetTitle className="flex items-center gap-2">
                 <Video className="h-5 w-5" />
-                <span className="text-base">OpenPlay</span>
+                <span className="text-base">SHORTZ</span>
               </SheetTitle>
             </SheetHeader>
             <nav className="flex flex-col gap-0.5 px-1 py-2">

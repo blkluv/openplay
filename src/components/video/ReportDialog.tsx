@@ -68,7 +68,7 @@ export function ReportDialog({ videoEvent, children }: ReportDialogProps) {
 
       toast({
         title: 'Report Submitted',
-        description: 'Thank you for helping keep OpenPlay safe. Your report has been submitted.',
+        description: 'Thank you for helping keep SHORTZ safe. Your report has been submitted.',
       });
 
       setOpen(false);

@@ -54,8 +54,8 @@ export default function VideoPlaylist() {
   const isOwner = currentUser && playlist && currentUser.pubkey === playlist.pubkey;
 
   useSeoMeta({
-    title: playlist?.title ? `${playlist.title} - OpenPlay` : 'Playlist - OpenPlay',
-    description: playlist?.description || 'View playlist on OpenPlay',
+    title: playlist?.title ? `${playlist.title} - SHORTZ` : 'Playlist - SHORTZ',
+    description: playlist?.description || 'View playlist on SHORTZ',
   });
 
   const handleShare = async () => {
@@ -64,7 +64,7 @@ export default function VideoPlaylist() {
     const shareUrl = window.location.href;
     const shareData = {
       title: playlist.title,
-      text: playlist.description || `Check out ${playlist.title} on OpenPlay`,
+      text: playlist.description || `Check out ${playlist.title} on SHORTZ`,
       url: shareUrl,
     };
 

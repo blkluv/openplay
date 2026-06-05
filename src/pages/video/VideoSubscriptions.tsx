@@ -15,8 +15,8 @@ export default function VideoSubscriptions() {
   const { user: currentUser } = useCurrentUser();
 
   useSeoMeta({
-    title: 'Subscriptions - OpenPlay',
-    description: 'Watch videos from people you follow on the decentralized Nostr network',
+    title: 'Subscriptions - SHORTZ',
+    description: 'Watch videos from people you follow on the Web5 network',
   });
 
   // Get the list of people the current user follows

@@ -20,8 +20,8 @@ import { Progress } from '@/components/ui/progress';
 
 export default function VideoUpload() {
   useSeoMeta({
-    title: 'Upload Video - OpenPlay',
-    description: 'Upload your video to the decentralized network',
+    title: 'Upload Video - SHORTZ',
+    description: 'Upload your video to the Web5 network',
   });
 
   const navigate = useNavigate();
