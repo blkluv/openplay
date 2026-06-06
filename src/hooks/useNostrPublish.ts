@@ -3,7 +3,7 @@ import { useMutation, type UseMutationResult } from "@tanstack/react-query";
 
 import { useCurrentUser } from "./useCurrentUser";
 
-import type { NostrEvent } from "@nostrify/nostrify";
+import type { NostrEvent } from "nostr-tools";
 
 export function useNostrPublish(): UseMutationResult<NostrEvent> {
   const { nostr } = useNostr();
@@ -18,7 +18,8 @@ export function useNostrPublish(): UseMutationResult<NostrEvent> {
         if (location.protocol === "https:" && !tags.some(([name]) => name === "client")) {
           tags.push(["client", location.hostname]);
         }
-
+          console.log("SIGNER", user.signer);
+          console.log("SIGNER KEYS", Object.keys(user.signer || {}));
         const event = await user.signer.signEvent({
           kind: t.kind,
           content: t.content ?? "",

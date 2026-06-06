@@ -38,11 +38,11 @@ export function usePostReaction() {
       // Add k tag for the kind
       tags.push(['k', target.kind.toString()]);
 
-      const event = await publishEvent({
-        kind: 7,
-        content,
+      const event = await publishMutation.mutateAsync({
+        kind: 22,
+        content: description,
         tags,
-      });
+   });
 
       return event;
     },

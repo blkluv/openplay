@@ -74,11 +74,11 @@ export function usePostComment() {
         }
       }
 
-      const event = await publishEvent({
-        kind: 1111,
-        content,
+      const event = await publishMutation.mutateAsync({
+        kind: 22,
+        content: description,
         tags,
-      });
+   });
 
       return event;
     },

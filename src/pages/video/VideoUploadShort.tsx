@@ -26,7 +26,7 @@ export default function VideoUploadShort() {
 
   const navigate = useNavigate();
   const { user: currentUser } = useCurrentUser();
-  const { publishEvent } = useNostrPublish();
+  const publishMutation = useNostrPublish();
   const { toast } = useToast();
 
   const [title, setTitle] = useState('');
@@ -230,10 +230,10 @@ export default function VideoUploadShort() {
       setUploadProgress(90);
 
       // Publish the event
-      const event = await publishEvent({
-        kind: 22,
-        content: description,
-        tags,
+      const event = await publishMutation.mutateAsync({
+      kind: 22,
+      content: description,
+      tags,
       });
 
       setUploadProgress(100);
