@@ -12,19 +12,19 @@ import { cn } from '@/lib/utils';
 
 const categories = [
   'All',
-  'Baddie',
+  'Spiritual',
   'Real Estate',
   'Reviews',
   'Jobs',
   'Food',
   'Tech',
   'Crystals',
-  'Music',
+  'Baddie',
   'Gaming',
   'Education',
   'News',
   'Comedy',
-  'Spiritual',
+  'Music',
 ];
 
 export default function VideoHome() {

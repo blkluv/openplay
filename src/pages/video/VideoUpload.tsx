@@ -56,7 +56,6 @@ export function VideoEditDialog({ videoEvent, video, children }: VideoEditDialog
 
   // Added Azzamo server
   const blossomServers = {
-    azzamo: 'https://blossom.azzamo.net/',
     primal: 'https://blossom.primal.net/',
     nostr_build: 'https://blossom.band/',
     satellite: 'https://cdn.satellite.earth/',
@@ -326,7 +325,6 @@ export function VideoEditDialog({ videoEvent, video, children }: VideoEditDialog
                   <SelectValue placeholder="Select server" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="azzamo">Azzamo (blossom.azzamo.net)</SelectItem>
                   <SelectItem value="primal">Primal (blossom.primal.net)</SelectItem>
                   <SelectItem value="nostr_build">Nostr.build (blossom.band)</SelectItem>
                   <SelectItem value="satellite">Satellite (cdn.satellite.earth)</SelectItem>

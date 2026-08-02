@@ -40,7 +40,6 @@ export default function VideoUploadShort() {
   const [hashtagInput, setHashtagInput] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [uploadMode, setUploadMode] = useState<'file' | 'url'>('file');
-  // Changed default server to Azzamo (free)
   const [selectedServer, setSelectedServer] = useState('azzamo');
   const [customServer, setCustomServer] = useState('');
   const [videoFile, setVideoFile] = useState<File | null>(null);
@@ -49,9 +48,7 @@ export default function VideoUploadShort() {
   const fileInputRef = useRef<HTMLInputElement>(null);
   const thumbnailInputRef = useRef<HTMLInputElement>(null);
 
-  // Added Azzamo server
   const blossomServers = {
-    azzamo: 'https://blossom.azzamo.net/',
     primal: 'https://blossom.primal.net/',
     nostr_build: 'https://blossom.band/',
     satellite: 'https://cdn.satellite.earth/',
@@ -278,7 +275,6 @@ export default function VideoUploadShort() {
               <AlertDescription className="mt-2 space-y-2">
                 <p>Videos are uploaded to Blossom servers. For full movie uploads and reliable storage:</p>
                 <ul className="list-disc list-inside space-y-1 ml-2">
-                  <li><strong>Azzamo</strong> (blossom.azzamo.net) - Free to try (may have limits)</li>
                   <li><strong>Primal</strong> (blossom.primal.net) - Requires paid subscription</li>
                   <li><strong>Nostr.Build</strong> (blossom.band) - Requires paid subscription</li>
                   <li><strong>Satellite.earth</strong> (cdn.satellite.earth) - Requires paid subscription</li>
@@ -325,7 +321,6 @@ export default function VideoUploadShort() {
                       <SelectValue placeholder="Select a server" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="azzamo">Azzamo (blossom.azzamo.net)</SelectItem>
                       <SelectItem value="primal">Primal (blossom.primal.net)</SelectItem>
                       <SelectItem value="nostr_build">Nostr.Build (blossom.band)</SelectItem>
                       <SelectItem value="satellite">Satellite.earth (cdn.satellite.earth)</SelectItem>

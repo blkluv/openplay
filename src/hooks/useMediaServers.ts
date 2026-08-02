@@ -5,7 +5,6 @@ import { finalizeEvent } from 'nostr-tools';
 
 // Updated: added blossom.azzamo.net as the first (free) server
 const DEFAULT_SERVERS = [
-  'https://blossom.azzamo.net/',
   'https://blossom.primal.net/',
   'https://blossom.band/',
   'https://cdn.satellite.earth/',
