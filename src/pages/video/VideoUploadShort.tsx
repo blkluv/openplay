@@ -20,7 +20,7 @@ import { Progress } from '@/components/ui/progress';
 
 export default function VideoUploadShort() {
   useSeoMeta({
-    title: 'Upload Short - SHORTZ',
+    title: 'Upload Short - VID',
     description: 'Upload your short vertical video to the Web5 network',
   });
 

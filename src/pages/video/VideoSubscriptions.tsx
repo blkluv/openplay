@@ -15,7 +15,7 @@ export default function VideoSubscriptions() {
   const { user: currentUser } = useCurrentUser();
 
   useSeoMeta({
-    title: 'Subscriptions - SHORTZ',
+    title: 'Subscriptions - VID',
     description: 'Watch videos from people you follow on the Web5 network',
   });
 

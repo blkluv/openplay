@@ -12,7 +12,7 @@ export default function VideoSearch() {
   const query = searchParams.get('q') || '';
 
   useSeoMeta({
-    title: query ? `Search: ${query} - SHORTZ` : 'Search - SHORTZ',
+    title: query ? `Search: ${query} - VID` : 'Search - VID',
     description: `Search results for "${query}"`,
   });
 

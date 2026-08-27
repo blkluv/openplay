@@ -53,8 +53,8 @@ export default function VideoChannel() {
   const followMutation = useFollowMutation();
 
   useSeoMeta({
-    title: author?.metadata?.name ? `${author.metadata.name}'s Channel - SHORTZ` : 'Channel - SHORTZ',
-    description: author?.metadata?.about || 'View channel on SHORTZ',
+    title: author?.metadata?.name ? `${author.metadata.name}'s Channel - VID` : 'Channel - VID',
+    description: author?.metadata?.about || 'View channel on VID',
   });
 
   // Fetch horizontal videos

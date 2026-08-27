@@ -63,8 +63,8 @@ export default function VideoShorts() {
 
   useSeoMeta({
     title: authorPubkey && channelAuthor?.metadata?.name
-      ? `${channelAuthor.metadata.name}'s Shorts - SHORTZ`
-      : 'Shorts - SHORTZ',
+      ? `${channelAuthor.metadata.name}'s Shorts - VID`
+      : 'Shorts - VID',
     description: 'Watch short-form vertical videos on the Web5 network',
   });
 
@@ -212,7 +212,7 @@ export default function VideoShorts() {
       if (navigator.share) {
         await navigator.share({
           title: video.title,
-          text: video.content || `Watch ${video.title} on SHORTZ`,
+          text: video.content || `Watch ${video.title} on VID`,
           url: shareUrl,
         });
       } else {
@@ -255,7 +255,7 @@ export default function VideoShorts() {
           <div className="text-6xl">📱</div>
           <h2 className="text-xl font-semibold text-foreground">No Shorts Yet</h2>
           <p className="text-muted-foreground">
-            Be the first to share a short vertical video on SHORTZ!
+            Be the first to share a short vertical video on VID!
           </p>
         </div>
       </div>

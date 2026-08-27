@@ -31,7 +31,7 @@ export default function VideoHome() {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   useSeoMeta({
-    title: 'SHORTZ - Decentralized Video Platform',
+    title: 'VID. - Decentralized Video Platform',
     description: 'Discover and watch videos on the Web5 network',
   });
 
@@ -203,7 +203,7 @@ export default function VideoHome() {
                 <h2 className="text-xl font-semibold">No Videos Yet</h2>
                 <p className="text-muted-foreground">
                   {selectedCategory === 'All'
-                    ? 'Be the first to share a video on SHORTZ! Upload your content and help build the Web5 network.'
+                    ? 'Be the first to share a video on VID! Upload your content and help build the Web5 network.'
                     : `No videos found for ${selectedCategory}. Try selecting a different category.`}
                 </p>
               </div>
